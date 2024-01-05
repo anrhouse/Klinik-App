@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/beranda/beranda.dart';
 import 'package:flutter_app/ui/login/login.dart';
+import 'package:flutter_app/ui/pasien/pasien_page.dart';
+import 'package:flutter_app/ui/pegawai/pegawai_page.dart';
 import 'package:flutter_app/ui/poli_page.dart';
 
 class Sidebar extends StatelessWidget {
@@ -24,7 +26,7 @@ class Sidebar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.accessible),
+            leading: Icon(Icons.roofing_rounded),
             title: Text("Poli"),
             onTap: () {
               Navigator.push(
@@ -34,15 +36,21 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.people),
             title: Text("Pegawai"),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PegawaiPage()));
+            },
           ),
           ListTile(
-            leading: Icon(Icons.account_box_sharp),
+            leading: Icon(Icons.accessible),
             title: Text("Pasien"),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PasienPage()));
+            },
           ),
           ListTile(
-            leading: Icon(Icons.account_box_sharp),
+            leading: Icon(Icons.logout),
             title: Text("Keluar"),
             onTap: () {
               Navigator.pushAndRemoveUntil(
